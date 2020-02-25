@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerDevs Graduate Page</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="addGraduate(event)">
+            <input type="text" placeholder="Enter Grad" id="name" />
+            <input type="text" placeholder="Enter Role" id="role" />
+            <input type="text" placeholder="Enter Company" id="company" />
+            <input type="date" placeholder="Enter Date of Graduation" id="yearOfGraduation" />
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+        </form>
+
+        <button class="btn waves-effect waves-light" onclick="renderGrads()">Show All Graduates</button>
+    </div>
+    <div id="results"></div>
+    <script src="script.js"></script>
+</body>
+</html>

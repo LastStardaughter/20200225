@@ -1,0 +1,43 @@
+h1,h2,h3
+{
+font-family: georgia, 'serif'; 
+}
+
+table
+{
+border-top: 1px solid #FFFFFF;
+border-left: 1px solid #FFFFFF;
+font-family: arial, 'sans serif'; 
+margin-left:auto; margin-right:auto;
+}
+
+p
+{
+font-family: georgia, 'serif'; 
+}
+
+th {background-color:blue; color:white}
+tr {background-color:white}
+
+body
+{
+background-color: lightgrey;
+font-size: 120%;
+}
+
+h1,h2,h3,hr 
+{
+color:saddlebrown; 
+}
+
+
+
+a:link    {color:darkred}
+a:visited {color:darkred}
+a:active  {color:red}
+a:hover   {color:red}
+
+a.th:link {color:white; text-decoration: none}
+a.th:visited {color:white; text-decoration: none}
+a.th:active {color:grey}
+a.th:hover {color:yellow}
