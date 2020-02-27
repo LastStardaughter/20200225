@@ -26,7 +26,7 @@ router.get('/test', async (req, res) => {
   });
 
 router.post('/', async(req, res)=>{
-    console.log("PUT request received:");
+    console.log("POST request received:");
     // console.log(req.body);
     const grad=new Grad({
         name: req.body.name,
@@ -41,6 +41,33 @@ router.post('/', async(req, res)=>{
     } catch (err){
         res.status(400).json({message:err.message});
     }
+
+})
+
+router.put('/:id', async(req, res)=>{
+    console.log("PUT request received for ID: "+req.params.id);
+    // console.log(req.body);
+    Grad.findByIdAndUpdate(req.params.id)
+    .then(grad = {
+        name: req.body.name,
+        role: req.body.role,
+        company:req.body.company,
+        yearOfGraduation:req.body.yearOfGraduation
+    })
+    try{
+        console.log(grad);
+        res.status(201).json(grad);
+    } catch (err){
+        res.status(400).json({message:err.message});
+    }
+
+})
+
+router.delete('/:id', async(req, res)=>{
+    console.log(req.params.id);
+    Grad.findById(req.params.id)
+    .then(grad => grad.remove().then(res.json({success:"true"})))
+    .catch(err=>res.status(404).json("Not found."));
 
 })
 
